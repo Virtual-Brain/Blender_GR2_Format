@@ -1,11 +1,11 @@
 bl_info = {
-    "name": "Divinity Collada Importer",
+    "name": "GR2 Importer",
     "author": "VirtualBrain#8571",
     "blender": (2, 90, 0),
     "location": "File > Import-Export",
-    "description": ("Import Collada/Granny files for Divinity: Original Sin 2 and Metin2."),
-    "warning": "Metin2 is in beta.",
-    "wiki_url": ("https://github.com/Virtual-Brain/dos2de_collada_importer"),
+    "description": ("Import Granny files for Metin2."),
+    "warning": "Metin2 import is in beta.",
+    "wiki_url": ("https://github.com/Virtual-Brain/Blender_GR2_Format"),
     "tracker_url": "",
     "support": "COMMUNITY",
     "category": "Import-Export"}
@@ -23,7 +23,7 @@ import subprocess
 import re
 
 class DivinityImporterAddonPreferences(AddonPreferences):
-    bl_idname = "dos2de_collada_importer"
+    bl_idname = "io_scene_gr2"
     divine_path : StringProperty(
         name="Divine Path",
         description="The path to divine.exe, used to convert from gr2 to dae",
@@ -52,8 +52,8 @@ base_skeleton_dict = {}
 
 def get_base_skeletons(scene, context):
     assets_dir = ""
-    if "dos2de_collada_importer" in context.preferences.addons:
-        preferences = context.preferences.addons["dos2de_collada_importer"].preferences
+    if "io_scene_gr2" in context.preferences.addons:
+        preferences = context.preferences.addons["io_scene_gr2"].preferences
         if preferences is not None:
             if "extracted_assets_dir" in preferences:
                 assets_dir = preferences.extracted_assets_dir
@@ -907,8 +907,8 @@ def import_collada(operator, context, load_filepath, rename_temp=False, **args):
 
     if use_build_material:
         assets_dir = ""
-        if "dos2de_collada_importer" in context.preferences.addons:
-            preferences = context.preferences.addons["dos2de_collada_importer"].preferences
+        if "io_scene_gr2" in context.preferences.addons:
+            preferences = context.preferences.addons["io_scene_gr2"].preferences
             if preferences is not None:
                 if "extracted_assets_dir" in preferences:
                     assets_dir = preferences.extracted_assets_dir
@@ -1138,8 +1138,8 @@ class ImportDivinityCollada(bpy.types.Operator, ImportHelper):
             divine_path = ""
 
             print(context.preferences.addons)
-            if "dos2de_collada_importer" in context.preferences.addons:
-                preferences = context.preferences.addons["dos2de_collada_importer"].preferences
+            if "io_scene_gr2" in context.preferences.addons:
+                preferences = context.preferences.addons["io_scene_gr2"].preferences
 
                 if preferences is not None and "divine_path" in preferences:
 
@@ -1170,7 +1170,7 @@ class ImportDivinityCollada(bpy.types.Operator, ImportHelper):
 import traceback
 
 def menu_func_import(self, context):
-    self.layout.operator(ImportDivinityCollada.bl_idname, text="Divinity Collada (.dae, .gr2)")
+    self.layout.operator(ImportDivinityCollada.bl_idname, text="Granny 3D File (.gr2)")
 
 
 classes = (

@@ -1,0 +1,36 @@
+{
+  "GR2": {
+    "InputPath": "C:\\Users\\Entity DevOps\\Desktop\\ClientToRelease\\pack\\YW_pc3\\ymir work\\pc3\\wolfman\\general\\wait.gr2",
+    "OutputPath": "C:\\Users\\Entity DevOps\\Desktop\\ClientToRelease\\pack\\YW_pc3\\ymir work\\pc3\\wolfman\\test\\test8.dae",
+    "BatchInputPath": "",
+    "BatchOutputPath": "",
+    "BatchInputFormat": 0,
+    "BatchOutputFormat": 1,
+    "ConformPath": "C:\\Users\\Entity DevOps\\Desktop\\ClientToRelease\\pack\\YW_pc3\\ymir work\\pc3\\wolfman\\wolfman_2_1.gr2"
+  },
+  "PAK": {
+    "ExtractInputPath": "",
+    "ExtractOutputPath": "",
+    "CreateInputPath": "",
+    "CreateOutputPath": "",
+    "CreatePackageVersion": 0,
+    "CreatePackageCompression": 3
+  },
+  "Resources": {
+    "InputPath": "",
+    "OutputPath": "",
+    "BatchInputPath": "",
+    "BatchOutputPath": "",
+    "BatchInputFormat": 0,
+    "BatchOutputFormat": 0
+  },
+  "Story": {
+    "InputPath": "",
+    "OutputPath": ""
+  },
+  "Debugging": {
+    "SavePath": ""
+  },
+  "SelectedGame": 3,
+  "Version": "1.14.2"
+}
